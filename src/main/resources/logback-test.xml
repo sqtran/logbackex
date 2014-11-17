@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%cyan(%msg%n)</pattern>
+        </encoder>
+        <target>System.out</target>
+    </appender>
+
+    <logger name="gov.cms.feps.ffm.evaas.rules.fpl" level="debug" appender-ref="STDOUT"/>
+    <logger name="gov.cms.feps.ffm.evaas.rules.gauntlet" level="debug" appender-ref="STDOUT"/>
+    <logger name="gov.cms.feps.ffm.evaas.rules.medichip" level="debug" appender-ref="STDOUT"/>
+    <logger name="gov.cms.feps.ffm.evaas.rules.reasoncodes" level="debug" appender-ref="STDOUT"/>
+
+    <!-- turned off so I have to explicitly declare the loggers I want to see when unit testing -->
+    <root level="debug">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
